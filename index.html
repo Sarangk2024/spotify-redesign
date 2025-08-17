@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Redesign</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #d1d5db; /* Light gray text */
+        }
+        /* Custom scrollbar for aesthetics on dark background */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 overflow-hidden flex h-screen text-gray-300">
+
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 w-64 p-6 flex flex-col justify-between hidden md:flex">
+        <div>
+            <!-- Logo -->
+            <div class="flex items-center space-x-2 mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-green-500">
+                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-2.625.756A41.26 41.26 0 0112 2.25c2.253 0 4.453.111 6.625.321C18.065 4.22 16.51 6 14.28 6.002H9.72c-2.23 0-3.785-1.78-4.346-3.004C7.547 2.36 9.747 2.25 12 2.25zM4.319 5.485c.67.65 1.348 1.488 2.025 2.502h11.23c.677-1.014 1.355-1.852 2.025-2.502a.75.75 0 011.14 0c.934.904 1.458 2.247 1.458 3.515V18.75c0 .414-.336.75-.75.75H2.75a.75.75 0 01-.75-.75V9.75c0-1.268.524-2.611 1.458-3.515a.75.75 0 011.14 0zM12 18a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-xl font-bold text-white">Spotify</span>
+            </div>
+
+            <!-- Main Navigation -->
+            <ul class="space-y-4 text-gray-400 font-medium">
+                <li>
+                    <a href="#" class="flex items-center space-x-3 hover:text-white hover:bg-gray-700 p-2 rounded-lg transition duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.144-.439 1.584 0L21.75 12M4.5 9.75v10.5a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V9.75M10.125 18H13.875" />
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 hover:text-white hover:bg-gray-700 p-2 rounded-lg transition duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-3 hover:text-white hover:bg-gray-700 p-2 rounded-lg transition duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 009-9-9 9 0 00-9-9-9 9 0 00-9 9c0 1.956.444 3.815 1.258 5.518L3 21m18 0l-1.258-5.518a9 9 0 01-1.258-5.518 9 9 0 00-9 9m-9 0a9 9 0 019-9c1.956 0 3.815.444 5.518 1.258L21 21m-9-9v9" />
+                        </svg>
+                        <span>Your Library</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Playlist Section -->
+            <div class="mt-8">
+                <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Playlists</h3>
+                <ul class="space-y-2 text-sm text-gray-400 overflow-y-auto" style="max-height: 200px;">
+                    <li><a href="#" class="hover:text-white transition duration-200">Liked Songs</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">Workout Mix</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">Chill Vibes</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">Road Trip Anthems</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">My Playlist #1</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">My Playlist #2</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">My Playlist #3</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-200">My Playlist #4</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- User Profile -->
+        <div class="flex items-center space-x-3">
+            <img src="https://placehold.co/40x40/4b5563/ffffff?text=U" alt="User Avatar" class="rounded-full">
+            <span class="text-sm font-semibold text-white">Sarang Kutta</span>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto p-6 relative">
+        <!-- Header with search and profile -->
+        <header class="flex justify-between items-center mb-8">
+            <div class="flex items-center space-x-4">
+                <button class="bg-gray-700 text-gray-400 p-2 rounded-full hover:bg-gray-600 transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button class="bg-gray-700 text-gray-400 p-2 rounded-full hover:bg-gray-600 transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M16.28 12.28a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 13l-6.97-6.97a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search for artists, songs, or podcasts" class="bg-gray-700 w-64 md:w-80 px-4 py-2 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <!-- Card 1: Recently Played -->
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:bg-gray-700 transition duration-200">
+                <img src="https://placehold.co/200x200/4a5568/ffffff?text=Album+Art" alt="Album Art" class="rounded-md w-full mb-4">
+                <h3 class="font-bold text-white">Album Title</h3>
+                <p class="text-sm text-gray-400">Artist Name</p>
+            </div>
+            
+            <!-- Card 2: Artist -->
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:bg-gray-700 transition duration-200">
+                <img src="https://placehold.co/200x200/d69e2e/ffffff?text=Artist" alt="Artist" class="rounded-full w-full mb-4">
+                <h3 class="font-bold text-white">Artist Name</h3>
+                <p class="text-sm text-gray-400">Artist</p>
+            </div>
+
+            <!-- Card 3: Playlist -->
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:bg-gray-700 transition duration-200">
+                <img src="https://placehold.co/200x200/90c19b/ffffff?text=Playlist" alt="Playlist" class="rounded-md w-full mb-4">
+                <h3 class="font-bold text-white">My Playlist</h3>
+                <p class="text-sm text-gray-400">by Sarang Kutta</p>
+            </div>
+
+            <!-- Card 4: Podcast -->
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:bg-gray-700 transition duration-200">
+                <img src="https://placehold.co/200x200/5a67d8/ffffff?text=Podcast" alt="Podcast" class="rounded-md w-full mb-4">
+                <h3 class="font-bold text-white">Podcast Title</h3>
+                <p class="text-sm text-gray-400">Podcast Host</p>
+            </div>
+
+        </div>
+
+        <!-- Section Title for more content -->
+        <h2 class="text-2xl font-bold text-white mt-12 mb-6">Discover New Music</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:bg-gray-700 transition duration-200">
+                <img src="https://placehold.co/200x200/60a5fa/ffffff?text=New+Album" alt="New Album" class="rounded-md w-full mb-4">
+                <h3 class="font-bold text-white">New Release</h3>
+                <p class="text-sm text-gray-400">Artist Name</p>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-xl shadow-lg hover:bg-gray-700 transition duration-200">
+                <img src="https://placehold.co/200x200/d8b4fe/ffffff?text=Top+Hits" alt="Top Hits" class="rounded-md w-full mb-4">
+                <h3 class="font-bold text-white">Global Top 50</h3>
+                <p class="text-sm text-gray-400">Playlist</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Player Bar -->
+    <footer class="bg-gray-800 p-4 md:p-6 flex items-center justify-between w-full h-24 absolute bottom-0">
+        <!-- Song Info -->
+        <div class="flex items-center space-x-4 flex-1">
+            <img src="https://placehold.co/60x60/4b5563/ffffff?text=Art" alt="Current Album Art" class="rounded-md">
+            <div class="flex flex-col">
+                <span class="text-white font-semibold">Current Song Title</span>
+                <span class="text-gray-400 text-sm">Artist Name</span>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center space-x-6 flex-1 justify-center">
+            <button class="text-gray-400 hover:text-white transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+            </button>
+            <button class="bg-white text-gray-800 p-3 rounded-full hover:scale-110 transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                    <path fill-rule="evenodd" d="M4.5 5.653c0-1.083 1.125-1.75 2.066-1.2l11.416 6.516a1.25 1.25 0 010 2.167L6.566 21.597A1.25 1.25 0 014.5 20.444V5.653z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <button class="text-gray-400 hover:text-white transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Volume and Time -->
+        <div class="flex items-center space-x-4 flex-1 justify-end">
+            <div class="w-40 bg-gray-600 rounded-full h-1.5">
+                <div class="bg-white h-1.5 rounded-full w-1/3"></div>
+            </div>
+            <span class="text-xs text-gray-400">2:45 / 4:10</span>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Button (hidden on large screens) -->
+    <div class="fixed bottom-24 right-6 md:hidden">
+        <button class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M3.75 6.75a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zM3.75 12a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75zM3.75 17.25a.75.75 0 01.75-.75h15a.75.75 0 010 1.5h-15a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </div>
+
+</body>
+</html>
